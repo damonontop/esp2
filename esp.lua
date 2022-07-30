@@ -3,6 +3,7 @@ local players = game:GetService("Players");
 local workspace = game:GetService("Workspace");
 
 -- variables
+local settings = ...;
 local camera = workspace.CurrentCamera;
 local get_pivot = workspace.GetPivot;
 local wtvp = camera.WorldToViewportPoint;
@@ -61,7 +62,7 @@ end
 local function update_esp()
     for player, esp in next, esp_cache do
         local character = player and player.Character;
-       if character and (...).esp then
+       if character and settings.esp then
             local cframe = get_pivot(character);
             local position, visible = wtvp(camera, cframe.Position);
 
