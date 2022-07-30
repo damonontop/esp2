@@ -61,7 +61,7 @@ end
 local function update_esp()
     for player, esp in next, esp_cache do
         local character = player and player.Character;
-        if character then
+       if character and (...).esp then
             local cframe = get_pivot(character);
             local position, visible = wtvp(camera, cframe.Position);
 
