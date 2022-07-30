@@ -67,10 +67,10 @@ local function update_esp()
             local cframe = get_pivot(character);
             local position, visible = wtvp(camera, cframe.Position);
 
-            esp.box.Visible = visible;
-            esp.tracer.Visible = visible;
-            esp.name.Visible = visible;
-            esp.distance.Visible = visible;
+            esp.box.Visible = settings.box and visible;
+            esp.tracer.Visible = settings.tracer and visible;
+            esp.name.Visible = settings.name and visible;
+            esp.distance.Visible = settings.distance and visible;
 
             if visible then
                 local scale_factor = get_scale_factor(position.Z, camera.FieldOfView);
